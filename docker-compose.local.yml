@@ -1,5 +1,6 @@
 app:
     build: .
+    container_name: "requestbin"
     environment:
         REALM: prod
         REDIS_URL: "//redis:6379"
@@ -10,3 +11,4 @@ app:
 
 redis:
     image: redis
+    container_name: "redis"
