@@ -16,14 +16,25 @@ Looking to self-host?
 
 ## Run a prebuilt Docker image hosted on Docker Hub
 
-Run an instance of the RequestBin docker image hosted on [Docker Hub](https://hub.docker.com/r/clarketm/requestbin/); specify the desired port (*default*: 8000) to expose on your server/machine: 
+Run an instance of the RequestBin docker image hosted on [Docker Hub](https://hub.docker.com/r/clarketm/requestbin/); specify the desired port to expose on your server/machine: 
 
+#### 1. Create a network
+```bash
+$ docker network create requestbin
 ```
+
+#### 2. Run a redis instance on the network
+```bash
+$ docker run --name redis --network requestbin redis
+```
+
+#### 3. Run a requestbin instance on the network
+```bash
 $ PORT=8000
-$ docker run -p $PORT:8000 clarketm/requestbin
+$ docker run --name requestbin -p $PORT:8000 --network requestbin clarketm/requestbin
 ```
 
-Your own private RequestBin instance will be running on the specified port.
+Your own private RequestBin instance will be running on the specified port (e.g. http://localhost:8000).
 
 
 Contributors
