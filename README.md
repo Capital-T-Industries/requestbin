@@ -10,6 +10,8 @@ MIT
 Looking to self-host?
 =====================
 
+## [Deploy your own instance using Heroku](https://github.com/Runscope/requestbin#deploy-your-own-instance-using-heroku)
+
 ## Deploy your own instance using Docker
 
 Run an instance of the RequestBin docker image hosted on [Docker Hub](https://hub.docker.com/r/clarketm/requestbin/); specify the desired port (default: 8000) to expose on your server/machine: 
