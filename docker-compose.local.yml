@@ -1,14 +1,22 @@
-app:
+version: "3.2"
+
+services:
+  app:
     build: .
     container_name: "requestbin"
     environment:
-        REALM: prod
-        REDIS_URL: "//redis:6379"
+      REALM: prod
+      REDIS_URL: "//redis:6379"
     links:
-        - redis
+    - redis
     ports:
-        - "8000:8000"
+    - "8000:8000"
 
-redis:
+  redis:
     image: redis
     container_name: "redis"
+    volumes:
+    - "cache_data:/data"
+
+volumes:
+  cache_data:
