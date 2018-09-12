@@ -25,17 +25,21 @@ $ docker network create requestbin
 
 #### 2. Run a redis instance on the network
 ```bash
-$ docker run --name redis --network requestbin redis
+$ docker run --name redis --network requestbin redis -d
 ```
 
 #### 3. Run a requestbin instance on the network
 ```bash
 $ PORT=8000
-$ docker run --name requestbin -p $PORT:8000 --network requestbin clarketm/requestbin
+$ docker run --name requestbin -p $PORT:8000 --network requestbin clarketm/requestbin -d
 ```
 
 Your own private RequestBin instance will be running on the specified port (e.g. http://localhost:8000).
 
+## Run with a single command using Docker-Compose
+```bash
+$ docker-compose -f <(curl "https://raw.githubusercontent.com/Capital-T-Industries/requestbin/master/docker-compose.yml") up -d
+```
 
 Contributors
 ------------
