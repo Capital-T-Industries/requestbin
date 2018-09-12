@@ -1,5 +1,5 @@
 app:
-    image: "clarketm/requestbin"
+    build: .
     environment:
         REALM: prod
         REDIS_URL: "//redis:6379"
