@@ -45,3 +45,4 @@ Contributors
 ------------
  * Barry Carlyon <barry@barrycarlyon.co.uk>
  * Jeff Lindsay <progrium@gmail.com>
+ * Travis Clarke <travis.m.clarke@gmail.com>
